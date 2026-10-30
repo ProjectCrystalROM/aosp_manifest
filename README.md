@@ -52,7 +52,9 @@ The owner validated M95, receive-only SMS and CrystalGram, plus Wi-Fi/Bluetooth/
 LTE/reboot persistence/camera photo+video/audio input+output on intermediate builds.
 User variant and SELinux enforcing then passed hardware checks. The final image's
 diagnostic-USB-removal boot/authorization acceptance remains pending its build.
-Boot logo clipping is a cosmetic known issue pending custom artwork. No new complete
+The updated device branch includes supplied Project Crystal boot artwork/wallpaper
+and CrystalGram/Camera dock defaults. Use m1-20261030-branding.xml for that pinned
+source checkpoint; the earlier m1-20261030.xml remains unchanged. No new complete
 ASB date is claimed: source patch label remains 2016-07-05; kernel is Linux3.10.108.
 
 CrystalGram standalone releases: https://github.com/ProjectCrystalROM/CrystalGram/releases
