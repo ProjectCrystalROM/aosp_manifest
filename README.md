@@ -58,3 +58,7 @@ source checkpoint; the earlier m1-20261030.xml remains unchanged. No new complet
 ASB date is claimed: source patch label remains 2016-07-05; kernel is Linux3.10.108.
 
 CrystalGram standalone releases: https://github.com/ProjectCrystalROM/CrystalGram/releases
+
+Documentation-cleanup checkpoint: `m1-20261030-docs.xml` keeps the same runtime
+configuration as the artwork checkpoint and pins corrected AOSP product/vendor/
+common documentation. Older pinned manifests remain unchanged.
