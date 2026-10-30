@@ -50,8 +50,9 @@ configuration. Original app signing identities must be preserved.
 
 The owner validated M95, receive-only SMS and CrystalGram, plus Wi-Fi/Bluetooth/
 LTE/reboot persistence/camera photo+video/audio input+output on intermediate builds.
-User variant and SELinux enforcing then passed hardware checks. The final image's
-diagnostic-USB-removal boot/authorization acceptance remains pending its build.
+User variant and SELinux enforcing then passed hardware checks. The final branded user-release image passed owner hardware validation, including
+MTP transfer. ADB authentication is configured; its authorization prompt was not
+separately reported as a runtime test.
 The updated device branch includes supplied Project Crystal boot artwork/wallpaper
 and CrystalGram/Camera dock defaults. Use m1-20261030-branding.xml for that pinned
 source checkpoint; the earlier m1-20261030.xml remains unchanged. No new complete
@@ -62,3 +63,11 @@ CrystalGram standalone releases: https://github.com/ProjectCrystalROM/CrystalGra
 Documentation-cleanup checkpoint: `m1-20261030-docs.xml` keeps the same runtime
 configuration as the artwork checkpoint and pins corrected AOSP product/vendor/
 common documentation. Older pinned manifests remain unchanged.
+
+## Project Crystal1.0 “First Facet”
+
+[Release notes](releases/1.0-first-facet-ms330.md) · [Downloads](https://github.com/ProjectCrystalROM/aosp_manifest/releases/tag/v1.0-first-facet-ms330)
+
+The release tag provides m1-v1.0-first-facet-ms330.xml, the exact tested runtime
+source snapshot. Later documentation-only corrections do not change the shipped
+ROM. Android remains5.1.1;1.0 is Project Crystal human release versioning.
