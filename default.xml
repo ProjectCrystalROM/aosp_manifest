@@ -1,18 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <manifest>
-
-  <remote  name="aosp"
-           fetch=".." />
-  <default revision="refs/tags/android-5.1.1_r38"
-           remote="aosp"
-           sync-j="4" />
-
-  <project path="build" name="platform/build" groups="pdk,tradefed" >
+  <remote name="aosp" fetch="https://android.googlesource.com/" />
+  <remote name="crystal" fetch="https://github.com/ProjectCrystalROM/" />
+  <default revision="refs/tags/android-5.1.1_r38" remote="aosp" sync-j="4" />
+  <project path="build" name="aosp_build" groups="pdk,tradefed" remote="crystal" revision="refs/heads/aosp-5.1.1-ms330">
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
   <project path="abi/cpp" name="platform/abi/cpp" groups="pdk" />
   <project path="art" name="platform/art" groups="pdk" />
-  <project path="bionic" name="platform/bionic" groups="pdk" />
+  <project path="bionic" name="aosp_bionic" groups="pdk" remote="crystal" revision="refs/heads/aosp-5.1.1-ms330" />
   <project path="bootable/bootloader/legacy" name="platform/bootable/bootloader/legacy" groups="pdk-cw-fs" />
   <project path="bootable/recovery" name="platform/bootable/recovery" groups="pdk" />
   <project path="cts" name="platform/cts" groups="cts,pdk-cw-fs" />
@@ -68,7 +64,7 @@
   <project path="external/arduino" name="platform/external/arduino" groups="pdk-cw-fs" />
   <project path="external/bison" name="platform/external/bison" groups="pdk" />
   <project path="external/blktrace" name="platform/external/blktrace" groups="pdk-cw-fs" />
-  <project path="external/bluetooth/bluedroid" name="platform/external/bluetooth/bluedroid" groups="pdk" />
+  <project path="external/bluetooth/bluedroid" name="aosp_external_bluetooth_bluedroid" groups="pdk" remote="crystal" revision="refs/heads/aosp-5.1.1-ms330" />
   <project path="external/bouncycastle" name="platform/external/bouncycastle" groups="pdk" />
   <project path="external/bsdiff" name="platform/external/bsdiff" groups="pdk" />
   <project path="external/bzip2" name="platform/external/bzip2" groups="pdk" />
@@ -76,7 +72,7 @@
   <project path="external/checkpolicy" name="platform/external/checkpolicy" groups="pdk" />
   <project path="external/chromium-libpac" name="platform/external/chromium-libpac" />
   <project path="external/chromium-trace" name="platform/external/chromium-trace" groups="pdk" />
-  <project path="external/chromium_org" name="platform/external/chromium_org" />
+  <project path="external/chromium_org" name="aosp_external_chromium_org" remote="crystal" revision="refs/heads/aosp-5.1.1-ms330" />
   <project path="external/chromium_org/sdch/open-vcdiff" name="platform/external/chromium_org/sdch/open-vcdiff" />
   <project path="external/chromium_org/testing/gtest" name="platform/external/chromium_org/testing/gtest" />
   <project path="external/chromium_org/third_party/WebKit" name="platform/external/chromium_org/third_party/WebKit" />
@@ -199,7 +195,7 @@
   <project path="external/libvorbis" name="platform/external/libvorbis" groups="pdk-cw-fs" />
   <project path="external/libvpx" name="platform/external/libvpx" groups="pdk" />
   <project path="external/libvterm" name="platform/external/libvterm" groups="pdk-cw-fs" />
-  <project path="external/libxml2" name="platform/external/libxml2" groups="pdk-cw-fs" />
+  <project path="external/libxml2" name="aosp_external_libxml2" groups="pdk-cw-fs" remote="crystal" revision="refs/heads/aosp-5.1.1-ms330" />
   <project path="external/libyuv" name="platform/external/libyuv" groups="libyuv,pdk-cw-fs" />
   <project path="external/linux-tools-perf" name="platform/external/linux-tools-perf" groups="pdk-cw-fs" />
   <project path="external/littlemock" name="platform/external/littlemock" groups="pdk-cw-fs" />
@@ -231,8 +227,8 @@
   <project path="external/objenesis" name="platform/external/objenesis" groups="pdk-cw-fs" />
   <project path="external/okhttp" name="platform/external/okhttp" groups="pdk-cw-fs" />
   <project path="external/opencv" name="platform/external/opencv" groups="pdk-cw-fs" />
-  <project path="external/openfst" name="platform/external/openfst" groups="pdk-cw-fs"/>
-  <project path="external/openssh" name="platform/external/openssh" groups="pdk-cw-fs"/>
+  <project path="external/openfst" name="platform/external/openfst" groups="pdk-cw-fs" />
+  <project path="external/openssh" name="platform/external/openssh" groups="pdk-cw-fs" />
   <project path="external/openssl" name="platform/external/openssl" groups="pdk" />
   <project path="external/oprofile" name="platform/external/oprofile" groups="pdk-cw-fs" />
   <project path="external/owasp/sanitizer" name="platform/external/owasp/sanitizer" />
@@ -282,8 +278,8 @@
   <project path="external/zlib" name="platform/external/zlib" groups="pdk" />
   <project path="external/zopfli" name="platform/external/zopfli" groups="pdk-cw-fs" />
   <project path="external/zxing" name="platform/external/zxing" groups="pdk-cw-fs" />
-  <project path="frameworks/av" name="platform/frameworks/av" groups="pdk" />
-  <project path="frameworks/base" name="platform/frameworks/base" groups="pdk-cw-fs" />
+  <project path="frameworks/av" name="aosp_frameworks_av" groups="pdk" remote="crystal" revision="refs/heads/aosp-5.1.1-ms330" />
+  <project path="frameworks/base" name="aosp_frameworks_base" groups="pdk-cw-fs" remote="crystal" revision="refs/heads/aosp-5.1.1-ms330" />
   <project path="frameworks/compile/libbcc" name="platform/frameworks/compile/libbcc" groups="pdk" />
   <project path="frameworks/compile/mclinker" name="platform/frameworks/compile/mclinker" groups="pdk" />
   <project path="frameworks/compile/slang" name="platform/frameworks/compile/slang" groups="pdk" />
@@ -292,7 +288,7 @@
   <project path="frameworks/minikin" name="platform/frameworks/minikin" groups="pdk-cw-fs" />
   <project path="frameworks/ml" name="platform/frameworks/ml" groups="pdk-cw-fs" />
   <project path="frameworks/multidex" name="platform/frameworks/multidex" groups="pdk-cw-fs" />
-  <project path="frameworks/native" name="platform/frameworks/native" groups="pdk" />
+  <project path="frameworks/native" name="aosp_frameworks_native" groups="pdk" remote="crystal" revision="refs/heads/aosp-5.1.1-ms330" />
   <project path="frameworks/opt/bitmap" name="platform/frameworks/opt/bitmap" />
   <project path="frameworks/opt/bluetooth" name="platform/frameworks/opt/bluetooth" groups="pdk-cw-fs" />
   <project path="frameworks/opt/calendar" name="platform/frameworks/opt/calendar" groups="pdk-cw-fs" />
@@ -316,7 +312,7 @@
   <project path="frameworks/rs" name="platform/frameworks/rs" groups="pdk" />
   <project path="frameworks/support" name="platform/frameworks/support" groups="pdk-cw-fs" />
   <project path="frameworks/volley" name="platform/frameworks/volley" groups="pdk-cw-fs" />
-  <project path="frameworks/webview" name="platform/frameworks/webview" groups="pdk-cw-fs" />
+  <project path="frameworks/webview" name="aosp_frameworks_webview" groups="pdk-cw-fs" remote="crystal" revision="refs/heads/aosp-5.1.1-ms330" />
   <project path="frameworks/wilhelm" name="platform/frameworks/wilhelm" groups="pdk-cw-fs" />
   <project path="hardware/akm" name="platform/hardware/akm" />
   <project path="hardware/broadcom/libbt" name="platform/hardware/broadcom/libbt" groups="pdk" />
@@ -336,13 +332,13 @@
   <project path="hardware/intel/img/psb_headers" name="platform/hardware/intel/img/psb_headers" groups="intel" />
   <project path="hardware/intel/img/psb_video" name="platform/hardware/intel/img/psb_video" groups="intel" />
   <project path="hardware/invensense" name="platform/hardware/invensense" groups="invensense" />
-  <project path="hardware/libhardware" name="platform/hardware/libhardware" groups="pdk" />
+  <project path="hardware/libhardware" name="aosp_hardware_libhardware" groups="pdk" remote="crystal" revision="refs/heads/aosp-5.1.1-ms330" />
   <project path="hardware/libhardware_legacy" name="platform/hardware/libhardware_legacy" groups="pdk" />
   <project path="hardware/nvidia/audio" name="platform/hardware/nvidia/audio" groups="nvidia_audio" />
   <project path="hardware/nvidia/tegra124" name="platform/hardware/nvidia/tegra124" groups="tegra124" />
   <project path="hardware/qcom/audio" name="platform/hardware/qcom/audio" groups="qcom,qcom_audio" />
   <project path="hardware/qcom/bt" name="platform/hardware/qcom/bt" groups="qcom" />
-  <project path="hardware/qcom/display" name="platform/hardware/qcom/display" groups="qcom,qcom_display" />
+  <project path="hardware/qcom/display" name="aosp_hardware_qcom_display" groups="qcom,qcom_display" remote="crystal" revision="refs/heads/aosp-5.1.1-ms330" />
   <project path="hardware/qcom/gps" name="platform/hardware/qcom/gps" groups="qcom,qcom_gps" />
   <project path="hardware/qcom/keymaster" name="platform/hardware/qcom/keymaster" groups="qcom" />
   <project path="hardware/qcom/media" name="platform/hardware/qcom/media" groups="qcom" />
@@ -353,8 +349,8 @@
   <project path="hardware/qcom/msm8x84" name="platform/hardware/qcom/msm8x84" groups="qcom_msm8x84" />
   <project path="hardware/qcom/power" name="platform/hardware/qcom/power" groups="qcom" />
   <project path="hardware/qcom/sensors" name="platform/hardware/qcom/sensors" groups="qcom" />
-  <project path="hardware/qcom/wlan" name="platform/hardware/qcom/wlan" groups="qcom_wlan" />
-  <project path="hardware/ril" name="platform/hardware/ril" groups="pdk" />
+  <project path="hardware/qcom/wlan" name="aosp_hardware_qcom_wlan" groups="qcom_wlan" remote="crystal" revision="refs/heads/aosp-5.1.1-ms330" />
+  <project path="hardware/ril" name="aosp_hardware_ril" groups="pdk" remote="crystal" revision="refs/heads/aosp-5.1.1-ms330" />
   <project path="hardware/samsung_slsi/exynos5" name="platform/hardware/samsung_slsi/exynos5" groups="exynos5" />
   <project path="hardware/ti/omap3" name="platform/hardware/ti/omap3" groups="omap3" />
   <project path="hardware/ti/omap4-aah" name="platform/hardware/ti/omap4-aah" groups="omap4-aah" />
@@ -362,7 +358,7 @@
   <project path="libcore" name="platform/libcore" groups="pdk" />
   <project path="libnativehelper" name="platform/libnativehelper" groups="pdk" />
   <project path="ndk" name="platform/ndk" />
-  <project path="packages/apps/BasicSmsReceiver" name="platform/packages/apps/BasicSmsReceiver" />
+  <project path="packages/apps/BasicSmsReceiver" name="aosp_packages_apps_BasicSmsReceiver" remote="crystal" revision="refs/heads/aosp-5.1.1-ms330" />
   <project path="packages/apps/Bluetooth" name="platform/packages/apps/Bluetooth" groups="pdk-cw-fs" />
   <project path="packages/apps/Browser" name="platform/packages/apps/Browser" />
   <project path="packages/apps/Calculator" name="platform/packages/apps/Calculator" />
@@ -489,7 +485,7 @@
   <project path="prebuilts/sdk" name="platform/prebuilts/sdk" groups="pdk,tradefed" />
   <project path="prebuilts/tools" name="platform/prebuilts/tools" groups="pdk,tools" />
   <project path="sdk" name="platform/sdk" groups="pdk-cw-fs" />
-  <project path="system/core" name="platform/system/core" groups="pdk" />
+  <project path="system/core" name="aosp_system_core" groups="pdk" remote="crystal" revision="refs/heads/aosp-5.1.1-ms330" />
   <project path="system/extras" name="platform/system/extras" groups="pdk" />
   <project path="system/keymaster" name="platform/system/keymaster" groups="pdk" />
   <project path="system/media" name="platform/system/media" groups="pdk" />
@@ -510,5 +506,17 @@
   <project path="tools/studio/translation" name="platform/tools/studio/translation" groups="notdefault,tools" />
   <project path="tools/swt" name="platform/tools/swt" groups="notdefault,tools" />
   <project path="tools/tradefederation" name="platform/tools/tradefederation" groups="notdefault,tradefed" />
-
+  <project path="hardware/qcom/display-caf/msm8916" name="aosp_hardware_qcom_display-caf_msm8916" remote="crystal" revision="refs/heads/aosp-5.1.1-ms330" />
+  <project path="hardware/qcom/media-caf/msm8916" name="aosp_hardware_qcom_media-caf_msm8916" remote="crystal" revision="refs/heads/aosp-5.1.1-ms330" />
+  <project path="hardware/qcom/audio-caf/msm8916" name="aosp_hardware_qcom_audio-caf_msm8916" remote="crystal" revision="refs/heads/aosp-5.1.1-ms330" />
+  <project path="kernel/lge/m1" name="aosp_kernel_lge_m1" remote="crystal" revision="refs/heads/aosp-5.1.1-ms330" />
+  <project path="system/qcom" name="aosp_system_qcom" remote="crystal" revision="refs/heads/aosp-5.1.1-ms330" />
+  <project path="external/bson" name="aosp_external_bson" remote="crystal" revision="refs/heads/aosp-5.1.1-ms330" />
+  <project path="external/curl" name="aosp_external_curl" remote="crystal" revision="refs/heads/aosp-5.1.1-ms330" />
+  <project path="external/connectivity" name="aosp_external_connectivity" remote="crystal" revision="refs/heads/aosp-5.1.1-ms330" />
+  <project path="vendor/lge/m1" name="aosp_vendor_lge_m1" remote="crystal" revision="refs/heads/aosp-5.1.1-ms330" />
+  <project path="device/lge/m1" name="aosp_device_lge_m1" remote="crystal" revision="refs/heads/aosp-5.1.1-ms330" />
+  <project path="device/lge/msm8909-common" name="aosp_device_lge_msm8909-common" remote="crystal" revision="refs/heads/aosp-5.1.1-ms330" />
+  <project path="device/lge/m1-common" name="aosp_device_lge_m1-common" remote="crystal" revision="refs/heads/aosp-5.1.1-ms330" />
+  <project path="device/qcom/sepolicy" name="aosp_device_qcom_sepolicy" remote="crystal" revision="refs/heads/aosp-5.1.1-ms330" />
 </manifest>
